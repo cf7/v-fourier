@@ -1,3 +1,4 @@
+_Note: For this app, I most definitely used @vue/clie create!_
 # app
 
 ## Project setup
