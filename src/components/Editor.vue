@@ -2,16 +2,16 @@
   <b-col class="col_1">
     <panel class="controls">
       <b-form className="controls-form">
-            <b-row>
-              <b-col>
-                <label>
-                  <fourier-button
-                    
-                  />
-                </label>
-              </b-col>
-            </b-row>
-          </b-form>
+        <b-row>
+          <b-col>
+            <label>
+              <fourier-button
+                
+              />
+            </label>
+          </b-col>
+        </b-row>
+      </b-form>
     </panel>
     <panel class="editor"> <!-- + (this.props.highlightEditor ? 'editor-highlighted' : '')}> -->
       <b-form-textarea class="editor-textarea">
@@ -25,8 +25,8 @@
 <script>
 /* eslint-disable */
 import Panel from './Panel.vue';
-import BForm from 'bootstrap-vue';
-import BFormTextarea from 'bootstrap-vue';
+import { BForm } from 'bootstrap-vue';
+import { BFormTextarea } from 'bootstrap-vue';
 import FourierButton from './FourierButton.vue';
 
 export default {
@@ -37,10 +37,10 @@ export default {
     displayText: String
   },
   components: {
-    Panel,
-    FourierButton,
-    BForm,
-    BFormTextarea,
+    'panel': Panel,
+    'fourier-button': FourierButton,
+    'b-form': BForm,
+    'b-form-textarea': BFormTextarea,
   }
 }
 </script>
