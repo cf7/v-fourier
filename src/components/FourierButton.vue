@@ -5,8 +5,7 @@
     class="submit-btn"  
     v-on:click="onClick"
     type="submit"
-    disabled="loading"
-    value="value"
+    v-bind:disabled="disabled"
     variant="outline-primary"
   >
   {{ text }}
@@ -15,22 +14,31 @@
 
 <script>
   /* eslint-disable */
-  import BButton from 'bootstrap-vue';
+  import { BButton } from 'bootstrap-vue';
 
   export default {
     name: "FourierButton",
     props: {
-      loading: Boolean,
+      loading: {
+        type: Boolean,
+        default: false,
+      },
       highlightTranslate: Boolean,
-      click: Function,
+      click: {
+        type: Function,
+        default: () => console.log("clicked!"),
+      },
     },
     computed: {
       text: function () {
         return this.loading ? 'Loading...' : 'Translate';
-      }
+      },
+      disabled: function () {
+        return this.loading ? true : false;
+      },
     },
     components: {
-      BButton,
+      'b-button': BButton,
     },
     methods: {
       onClick: function (event) {
